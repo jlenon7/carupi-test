@@ -7,16 +7,18 @@ import {
   Injectable,
   UnauthorizedException,
 } from '@nestjs/common'
+import { UserRepository } from 'app/Repositories/UserRepository'
 
 @Injectable()
 export class AuthService {
   @Inject(JwtService) private jwtService: JwtService
   @Inject(UserService) private userService: UserService
+  @Inject(UserRepository) private userRepository: UserRepository
 
   async validateUser(email: string, pass: string): Promise<any> {
     const user = await this.userService.findOneByEmail(email)
 
-    if (user && (await bcrypt.compare(pass, user.password))) {
+    if (await bcrypt.compare(pass, user.password)) {
       return user
     }
 
@@ -42,7 +44,9 @@ export class AuthService {
   async register(data) {
     data.email = data.email.toLowerCase().trim()
 
-    const user = await this.userService.findOneByEmail(data.email)
+    const user = await this.userRepository.getOne(null, {
+      where: [{ key: 'email', value: data.email }],
+    })
 
     if (user) {
       throw new HttpException('EMAIL_ALREADY_TAKEN', 422)
