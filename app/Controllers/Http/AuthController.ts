@@ -9,7 +9,7 @@ import {
   ValidationPipe,
 } from '@nestjs/common'
 
-import { ApiTags } from '@nestjs/swagger'
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger'
 import { User } from 'app/Decorators/User'
 import { JwtGuard } from './Guards/JwtGuard'
 import { AuthService } from 'app/Services/Api/AuthService'
@@ -18,6 +18,7 @@ import { RegisterValidator } from '../Validators/RegisterValidator'
 import { ResponseInterceptor } from './Interceptors/ResponseInterceptor'
 
 @ApiTags('Auth')
+@ApiBearerAuth()
 @Controller('/v1/auth')
 @UseInterceptors(ResponseInterceptor)
 export class AuthController {

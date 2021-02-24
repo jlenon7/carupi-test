@@ -25,13 +25,13 @@ Não esqueça de criar o arquivo com as váriaveis de ambiente para rodar os tes
 
 ## ENDPOINTS
 
-| METHOD    | URI                 | NAME            |
-| --------- | ------------------- | ----------------|
-| GET       | api/v1/cars         | cars.index      |
-| POST      | api/v1/cars         | cars.store      |
-| GET       | api/v1/cars/:id     | cars.show       |
-| PUT       | api/v1/cars/:id     | cars.update     |
-| DELETE    | api/v1/cars/:id     | cars.delete     |
+| METHOD    | URI                     | NAME            |
+| --------- | ----------------------- | ----------------|
+| GET       | /api/v1/cars            | cars.index      |
+| POST      | /api/v1/cars            | cars.store      |
+| GET       | /api/v1/cars/:token     | cars.show       |
+| PUT       | /api/v1/cars/:token     | cars.update     |
+| DELETE    | /api/v1/cars/:token     | cars.delete     |
 
 JSON Example POST/PUT
 
@@ -58,13 +58,13 @@ Listagem entre preços: `?since_price=200000&max_price=400000`
 
 ---
 
-| METHOD    | URI                 | NAME            |
-| --------- | ------------------- | ----------------|
-| GET       | api/v1/auth/me      | auth.me         |
-| POST      | api/v1/auth/login   | auth.login      |
-| POST      | api/v1/auth/register| auth.register   |
+| METHOD    | URI                  | NAME            |
+| --------- | -------------------- | ----------------|
+| GET       | /api/v1/auth/me      | auth.me         |
+| POST      | /api/v1/auth/login   | auth.login      |
+| POST      | /api/v1/auth/register| auth.register   |
 
-JSON Example POST
+JSON Example POST Register
 
 ```json
 {
