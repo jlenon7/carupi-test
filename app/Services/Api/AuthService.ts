@@ -19,6 +19,8 @@ export class AuthService {
   }
 
   async login(email, password) {
+    email = email.toLowerCase().trim()
+
     const user = await this.validateUser(email, password)
 
     if (!user) {
@@ -33,6 +35,8 @@ export class AuthService {
   }
 
   async register(data) {
+    data.email = data.email.toLowerCase().trim()
+
     return this.userService.create(data)
   }
 }
