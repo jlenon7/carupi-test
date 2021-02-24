@@ -14,7 +14,7 @@ import {
 } from '@nestjs/common'
 
 import { JwtGuard } from './Guards/JwtGuard'
-import { ApiTags, ApiQuery } from '@nestjs/swagger'
+import { ApiTags, ApiQuery, ApiBearerAuth } from '@nestjs/swagger'
 import { Pagination } from 'app/Decorators/Pagination'
 import { CarService } from 'app/Services/Api/CarService'
 import { CreateCarValidator } from '../Validators/CreateCarValidator'
@@ -23,6 +23,7 @@ import { ResponseInterceptor } from './Interceptors/ResponseInterceptor'
 import { PaginationContract } from '@secjs/core/build/Contracts/PaginationContract'
 
 @ApiTags('Cars')
+@ApiBearerAuth()
 @UseGuards(JwtGuard)
 @Controller('/v1/cars')
 @UseInterceptors(ResponseInterceptor)

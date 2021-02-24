@@ -18,13 +18,13 @@ import { RegisterValidator } from '../Validators/RegisterValidator'
 import { ResponseInterceptor } from './Interceptors/ResponseInterceptor'
 
 @ApiTags('Auth')
-@ApiBearerAuth()
 @Controller('/v1/auth')
 @UseInterceptors(ResponseInterceptor)
 export class AuthController {
   @Inject(AuthService) private authService: AuthService
 
   @Get('/me')
+  @ApiBearerAuth()
   @UseGuards(JwtGuard)
   async me(@User() user) {
     return user
