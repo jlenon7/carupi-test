@@ -15,7 +15,7 @@
 
 Jubscleiton está lançando uma nova plataforma de vendas de `carros`. Nesta plataforma, desejamos realizar o cadastro de novos carros para os clientes consultarem.
 
-<img src="https://www.projetodraft.com/wp-content/uploads/2020/10/logo_carupi.png" width="200px" align="right" hspace="30px" vspace="100px">
+<img src="https://www.projetodraft.com/wp-content/uploads/2020/10/logo_carupi.png" width="400px" align="right" hspace="30px" vspace="100px">
 
 ## ENDPOINTS
 
