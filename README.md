@@ -17,6 +17,12 @@ Jubscleiton está lançando uma nova plataforma de vendas de `carros`. Nesta pla
 
 <img src="https://www.projetodraft.com/wp-content/uploads/2020/10/logo_carupi.png" width="400px" align="right" hspace="30px" vspace="100px">
 
+## OBSERVAÇÃO
+
+Essa API está rodando dentro de um servidor no Heroku apenas para ter um acesso mais simplificado ao `Swagger`. [Clique aqui para acessar!](https://carupi-test.herokuapp.com/api/swagger)
+
+Não esqueça de criar o arquivo com as váriaveis de ambiente para rodar os testes ou modo development.
+
 ## ENDPOINTS
 
 | METHOD    | URI                 | NAME            |
@@ -27,36 +33,84 @@ Jubscleiton está lançando uma nova plataforma de vendas de `carros`. Nesta pla
 | PUT       | api/v1/cars/:id     | cars.update     |
 | DELETE    | api/v1/cars/:id     | cars.delete     |
 
+JSON Example POST/PUT
+
+```json
+{
+  "brand": "Nissan",
+  "model": "Skyline",
+  "version": "R34",
+  "year": 1990,
+  "mileage": 0,
+  "gearboxType": "manual",
+  "price": 100000,
+  "status": "approved",
+}
+```
+
 ### Query Search em cars.index
 
 Listagem paginadas: `?offset=0&limit=10`
 
-Listagem entre preços: `?since_price=20000.00&max_price=40000.00`
-
 Listagem entre ano: `?since_year=2018&max_year=2021`
 
-## OBSERVAÇÃO
+Listagem entre preços: `?since_price=200000&max_price=400000`
 
-Essa API está rodando dentro de um servidor no Heroku apenas para ter um acesso mais simplificado ao `Swagger`. [Clique aqui para acessar!](https://carupi-test.herokuapp.com/api/swagger)
+---
 
-Não esqueça de criar o arquivo com as váriaveis de ambiente para rodar os testes ou modo development.
+| METHOD    | URI                 | NAME            |
+| --------- | ------------------- | ----------------|
+| GET       | api/v1/auth/me      | auth.me         |
+| POST      | api/v1/auth/login   | auth.login      |
+| POST      | api/v1/auth/register| auth.register   |
+
+JSON Example POST
+
+```json
+{
+  "name": "João Lenon",
+  "email": "lenonSec7@gmail.com",
+  "password": "12345678",
+  "password_confirmation": "12345678",
+}
+```
 
 ## COMANDOS
 
+Instale as dependências
+
 ```bash
-cp .env.example .env.testing && yarn test
-cp .env.example .env && yarn start:dev
+yarn
+```
+
+Gere o arquivo .env
+
+```bash
+cp .env.example .env && cp .env.example .env.testing
+```
+
+Para rodar os testes E2E e Unitários
+
+```bash
+yarn test
+```
+
+Para rodar a aplicação em modo desenvolvimento
+
+```bash
+yarn start:dev
 ```
 
 ## REQUISITOS
 
-- [ ] API RESTful
-- [ ] CRUD de Carros
-- [ ] Adicionar Rate Limiter
-- [ ] Implementar testes E2E no Resource Cars
-- [ ] Implementar teste unitário na camada de serviço
-- [ ] No filtro ser possível pesquisar por cadas atributo do carro e poder ter range de ano e preço
-- [ ] Criar Schema Cars com os seguintes atributos - brand, model, version, year, mileage, gearboxType & sellPrice.
+- [x] API RESTful
+- [x] CRUD de Carros
+- [x] Autenticação JWT
+- [x] Adicionar Rate Limiter
+- [x] Implementar testes E2E no Resource Cars
+- [x] Implementar teste unitário na camada de serviços
+- [x] No filtro ser possível pesquisar por cada atributo do carro e poder ter range de ano e preço
+- [x] Criar Schema Cars com os seguintes atributos - brand, model, version, year, mileage, gearboxType & sellPrice.
 
 ## INSTRUÇÕES
 
