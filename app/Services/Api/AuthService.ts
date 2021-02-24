@@ -1,7 +1,12 @@
 import * as bcrypt from 'bcrypt'
 import { JwtService } from '@nestjs/jwt'
 import { UserService } from './UserService'
-import { Inject, Injectable, UnauthorizedException } from '@nestjs/common'
+import {
+  HttpException,
+  Inject,
+  Injectable,
+  UnauthorizedException,
+} from '@nestjs/common'
 
 @Injectable()
 export class AuthService {
@@ -36,6 +41,12 @@ export class AuthService {
 
   async register(data) {
     data.email = data.email.toLowerCase().trim()
+
+    const user = await this.userService.findOneByEmail(data.email)
+
+    if (user) {
+      throw new HttpException('EMAIL_ALREADY_TAKEN', 422)
+    }
 
     return this.userService.create(data)
   }
