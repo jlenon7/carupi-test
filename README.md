@@ -19,7 +19,7 @@ Jubscleiton está lançando uma nova plataforma de vendas de `carros`. Nesta pla
 
 ## OBSERVAÇÃO
 
-Essa API está rodando dentro de um servidor no Heroku apenas para ter um acesso mais simplificado ao `Swagger`. [Clique aqui para acessar!](https://carupi-test.herokuapp.com/api/swagger)
+Essa API está rodando dentro de um servidor no Heroku apenas para ter um acesso mais simplificado ao `Swagger`. [Clique aqui para acessar!](https://carupi-test.herokuapp.com/api/swagger) PS: Aguarde o carregamento da página. Como está no plano free, o Heroku desliga a máquina automaticamente quando o servidor para de ser consumido, e só quando uma nova requisição chega que ele roda o servidor novamente, esse processo demora um pouco.
 
 Não esqueça de criar o arquivo com as váriaveis de ambiente para rodar os testes ou modo development.
 
