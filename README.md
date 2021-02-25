@@ -107,6 +107,7 @@ yarn start:dev
 - [x] CRUD de Carros
 - [x] Autenticação JWT
 - [x] Adicionar Rate Limiter
+- [x] Implementar testes E2E no Resource Auth
 - [x] Implementar testes E2E no Resource Cars
 - [x] Implementar teste unitário na camada de serviços
 - [x] No filtro ser possível pesquisar por cada atributo do carro e poder ter range de ano e preço
