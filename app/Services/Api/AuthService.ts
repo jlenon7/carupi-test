@@ -26,7 +26,7 @@ export class AuthService {
   }
 
   async login(email, password) {
-    email = email.toLowerCase().trim()
+    email.toLowerCase().trim()
 
     const user = await this.validateUser(email, password)
 
@@ -42,7 +42,7 @@ export class AuthService {
   }
 
   async register(data) {
-    data.email = data.email.toLowerCase().trim()
+    data.email.toLowerCase().trim()
 
     const user = await this.userRepository.getOne(null, {
       where: [{ key: 'email', value: data.email }],

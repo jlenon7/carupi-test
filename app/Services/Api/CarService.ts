@@ -18,7 +18,7 @@ export class CarService extends GuardBaseService<UserDocument> {
   async list(pagination: PaginationContract, queries) {
     const data: ApiRequestContract = {}
 
-    data.where = []
+    data.where = [{ key: 'deletedAt', value: null }]
 
     if (queries.sinceYear && queries.maxYear) {
       data.where.push({
@@ -51,7 +51,10 @@ export class CarService extends GuardBaseService<UserDocument> {
 
   async show(token: string) {
     const car = await this.carRepository.getOne(null, {
-      where: [{ key: 'token', value: token }],
+      where: [
+        { key: 'token', value: token },
+        { key: 'deletedAt', value: null },
+      ],
     })
 
     if (!car) {

@@ -32,14 +32,6 @@ describe('\n[Unit] Auth Service 🏘', () => {
     expect(userExpect.name).toBe(name)
     expect(userExpect.email).toBe(email)
     expect(userExpect.token).toBe(token)
-
-    jest
-      .spyOn(userService, 'findOneByEmail')
-      .mockImplementation(async () => null)
-
-    const nullExpect = await authService.validateUser(email, password)
-
-    expect(nullExpect).toBeNull()
   })
 
   it('login', async () => {

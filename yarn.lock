@@ -689,10 +689,10 @@
     "@angular-devkit/core" "11.2.0"
     "@angular-devkit/schematics" "11.2.0"
 
-"@secjs/core@^1.4.3":
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/@secjs/core/-/core-1.4.3.tgz#5866e714930fbb5e6f0ff94aa713f51c07937a5e"
-  integrity sha512-CIGNIA9f3t1pkGSjnBFzqJJxhhD59IeMMIq3QFHRTwAQ1XoFucPu/IfNbzuF7FwHoPvu9VMFaKXjDd3zFs2Uzw==
+"@secjs/core@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@secjs/core/-/core-1.4.4.tgz#f4d14ad14ecf1da5028f3147bd8858a4dc73d7bb"
+  integrity sha512-fAoDlhSf6XbYwhZyxH6h+M89ldW7HIXZ2D/wklRRIXwkrQ7NSuCZ193DUCa+Ytsyj/e47g5Uw0PTkq2aymZbRg==
 
 "@secjs/env@^1.0.1":
   version "1.0.1"

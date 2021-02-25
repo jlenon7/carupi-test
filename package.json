@@ -30,7 +30,7 @@
     "@nestjs/passport": "^7.1.5",
     "@nestjs/platform-express": "^7.0.0",
     "@nestjs/swagger": "^4.7.13",
-    "@secjs/core": "^1.4.3",
+    "@secjs/core": "^1.4.4",
     "@secjs/env": "^1.0.1",
     "axios": "^0.21.0",
     "bcrypt": "^5.0.0",
