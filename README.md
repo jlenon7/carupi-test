@@ -104,6 +104,7 @@ yarn start:dev
 ## REQUISITOS
 
 - [x] API RESTful
+- [x] Pipeline CI
 - [x] CRUD de Carros
 - [x] Autenticação JWT
 - [x] Adicionar Rate Limiter
